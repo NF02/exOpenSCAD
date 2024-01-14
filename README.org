@@ -1,1 +1,9 @@
+#+author: Nicola Ferru aka NFVblog
+#+title: Esempi ed esercizi per OpenSCAD
 * Esempi OpenSCAD
+OpenSCAD è un motore e software cad con una logica a OpenCSG (/Constructive Solid Geometry/), una libreria che permette la creazione e la modellazione 3d in modo semplice e veloce. Questo programma permette di strutturare e poi stampare un modello tramite una sintassi interna, il software è composto da diverse parti:
+- Editor: dove si struttura il modello assegnando gli attributi ai poligoni che poi comporranno il modello finito;
+- Console: la finestra in cui vengono visualizzate le risposte dell'interprete di istruzioni;
+- Error Log: la lista dei messaggi errori o warning;
+- Customers.
+L'ambiente risulta estremamente personalizzabile, andando a impostare il layout che più c'è comodo per poter lavorare.
