@@ -9,9 +9,10 @@ OpenSCAD è un motore e software cad con una logica a OpenCSG (/Constructive Sol
 L'ambiente risulta estremamente personalizzabile, andando a impostare il layout che più c'è comodo per poter lavorare.
 
 #+begin_quote
-I due componenti fondamentali sono generalmente l'editor e la console che svolgono la funzione rispettivamente di scrittura e definizione, e di rimando all'utente per poter lavorare correttamente.
+I due componenti fondamentali sono generalmente *l'editor* e *la console* che svolgono la funzione rispettivamente di scrittura e definizione, e di rimando all'utente per poter lavorare correttamente.
 #+end_quote
 ** Unità di misura
+*** Usando un modello
 Uno dei punti che lascia i nuovi utenti perplessi è proprio l'unità di misura della scala che viene riportata nel programma, il fatto è che esso non utilizza un unità specifica, per risolvere questo problema su reddit l'utente [[https://www.reddit.com/user/e0engoon/][e0engoon]] propone di creare un file *.scad* con tutte le unità dimisura al suo interno, esso si presenta nel seguente modo:
 #+begin_src c
   // unita.scad
@@ -25,7 +26,23 @@ Uno dei punti che lascia i nuovi utenti perplessi è proprio l'unità di misura 
   unita = POLLICI;
 
   // riduce tutti in millimetri
-  dimensione_scatola = 60 / unita;
-  wall_thickness = 60 / unita;
+  dimensione_contenitore = 60 / unita;
+  spessore_del_muro = 60 / unita;
 #+end_src
-Per selezionare l'unità di misura basterà semplice cambiare il valore della variabile ~unita~ per scalare le sua 
+Per selezionare l'unità di misura basterà semplice cambiare il valore della variabile ~unita~ con quelli sopra citati. poter utilizzare suddette unità in un file interno il comando ~include~, come posto da esempio:
+#+begin_src c
+  include <unita.scad>
+
+  module contenitore(){
+    difference(){
+      cube(dimensione_contenitore);
+      translate([spessore_del_muro, spessore_del_muro, spessore_del_muro]);
+      dimensione_interna = dimensione_contenitore - spessore_del_muro * 2;
+      cube([dimensione_del_muro, dimensione_interna, dimensione_contenitore]);
+    }
+  }
+  
+  contenitore();
+#+end_src
+*** Usando il comando ~scale~
+
