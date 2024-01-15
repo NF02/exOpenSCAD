@@ -6,4 +6,5 @@ OpenSCAD è un motore e software cad con una logica a OpenCSG (/Constructive Sol
 - *Error Log*: la lista dei messaggi errori o warning;
 - *Customers*.
 L'ambiente risulta estremamente personalizzabile, andando a impostare il layout che più c'è comodo per poter lavorare.
+#+CAPTION: La mia configurazione
 [[./img/my_config.png]]
