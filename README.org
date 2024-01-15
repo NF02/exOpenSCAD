@@ -1,10 +1,31 @@
 #+author: Nicola Ferru aka NFVblog
 #+title: Esempi ed esercizi per OpenSCAD
+[[./img/my_config.png]]
 OpenSCAD è un motore e software cad con una logica a OpenCSG (/Constructive Solid Geometry/), una libreria che permette la creazione e la modellazione 3d in modo semplice e veloce. Questo programma permette di strutturare e poi stampare un modello tramite una sintassi interna, il software è composto da diverse parti:
 - *Editor*: dove si struttura il modello assegnando gli attributi ai poligoni che poi comporranno il modello finito;
 - *Console*: la finestra in cui vengono visualizzate le risposte dell'interprete di istruzioni;
 - *Error Log*: la lista dei messaggi errori o warning;
 - *Customers*.
 L'ambiente risulta estremamente personalizzabile, andando a impostare il layout che più c'è comodo per poter lavorare.
-#+CAPTION: La mia configurazione
-[[./img/my_config.png]]
+
+#+begin_quote
+I due componenti fondamentali sono generalmente l'editor e la console che svolgono la funzione rispettivamente di scrittura e definizione, e di rimando all'utente per poter lavorare correttamente.
+#+end_quote
+** Unità di misura
+Uno dei punti che lascia i nuovi utenti perplessi è proprio l'unità di misura della scala che viene riportata nel programma, il fatto è che esso non utilizza un unità specifica, per risolvere questo problema su reddit l'utente [[https://www.reddit.com/user/e0engoon/][e0engoon]] propone di creare un file *.scad* con tutte le unità dimisura al suo interno, esso si presenta nel seguente modo:
+#+begin_src c
+  // unita.scad
+  MILLIMETRI = 1.0;
+  CENTIMETRI = 10.0;
+  METRI = 1000.0;
+  POLLICI = 25.4;
+  PIEDI = 304.8;
+
+  // selezione delle unità di misura
+  unita = POLLICI;
+
+  // riduce tutti in millimetri
+  dimensione_scatola = 60 / unita;
+  wall_thickness = 60 / unita;
+#+end_src
+Per selezionare l'unità di misura basterà semplice cambiare il valore della variabile ~unita~ per scalare le sua 
