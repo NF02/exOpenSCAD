@@ -45,4 +45,13 @@ Per selezionare l'unità di misura basterà semplice cambiare il valore della va
   contenitore();
 #+end_src
 *** Usando il comando ~scale~
-
+Un altro sistema utile è lo ~scale~, che consente di scalare un modello X, del quantitativo passato tramite i paramentri della fuzione.
+#+begin_src c
+scale(v = [x, y, z]) {
+   cube(5);
+}
+#+end_src
+#+begin_quote
+Il concetto fondamentale nel caso di entrambi i metodi trattati è il fatto che bisogna rispettare la scala quando si va a rappresentare il modello, mantenendo delle proporzioni, quindi, se ad esempio si vuognono usare gli inch per fare le misurazione bisogna proporzionare il modello seguendo quella scala, esattamente come si fa con i piedi (ft) o i millimetri (mm).
+#+end_quote
+** 
