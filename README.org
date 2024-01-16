@@ -51,8 +51,10 @@ scale(v = [x, y, z]) {
    cube(5);
 }
 #+end_src
-ovviamente bisogna riportare la propria scala in base al concetto dell'unità (/openSCAD ha un unità generica quindi bisogna fare la proporzionare in base al rapporto e il sistema di riferimento della propria sistema di misurazione. il rapporto rispetto al SCAD unit è presente nell'esempio precente, infatti, nel caso del millimetro è pari a 60/1.0, mentre, un pollice equivale a 60/25.4/).
+Ovviamente bisogna riportare la propria scala in base al concetto dell'unità (/openSCAD ha un unità generica quindi bisogna fare la proporzionare in base al rapporto e il sistema di riferimento della propria sistema di misurazione. il rapporto rispetto al SCAD unit è presente nell'esempio precente, infatti, nel caso del millimetro è pari a 60/1.0, mentre, un pollice equivale a 60/25.4/).
 #+begin_quote
 Il concetto fondamentale nel caso di entrambi i metodi trattati è il fatto che bisogna rispettare la scala quando si va a rappresentare il modello, mantenendo delle proporzioni, quindi, se ad esempio si vuognono usare gli inch per fare le misurazione bisogna proporzionare il modello seguendo quella scala, esattamente come si fa con i piedi (ft) o i millimetri (mm).
 #+end_quote
-** 
+** Differenze
+Per poter costruire dei solidi complessi una delle funzioni che permette di fare openSCAD è la sottrazione di un area X, partendo dai solidi elementari (/cubo, sfera, cilindro/), essa viene implementata con un corpo funzione specifico chiamato ~diference~ e ha la seguente logica:
+ * 
